@@ -2,7 +2,7 @@
 const OrderDetails = () => {
   return (
     <div>
-      dadadd
+      OrderDetails
     </div>
   )
 }

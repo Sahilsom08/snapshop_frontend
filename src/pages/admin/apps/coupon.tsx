@@ -13,7 +13,7 @@ const Coupon = () => {
 
   const [isCopied, setIsCopied] = useState<boolean>(false);
 
-  const [size, setSize] = useState<number>(30);
+  // const [size, setSize] = useState<number>(30);
   const [coupon, setCoupon] = useState<string>("");
 
   const { user } = useSelector((state: Rootstate) => state.userReducer);
@@ -56,7 +56,7 @@ const Coupon = () => {
               value={CouponCode}
               onChange={(e) => setCouponCode(e.target.value)}
               minLength={5}
-              maxLength={size}
+              maxLength={30}
             />
 
             {/* <input

@@ -1,6 +1,6 @@
 import { ReactElement, useEffect, useState } from "react";
 import toast from "react-hot-toast";
-import { FaTrash, FaUser } from "react-icons/fa";
+import { FaTrash } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import { Column } from "react-table";
 import { SkeletonLoader } from "../../components/Loader";
