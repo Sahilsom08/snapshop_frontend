@@ -74,7 +74,6 @@ const CheckoutForm = () => {
 
     if (paymentIntent.status === "succeeded") {
       const res = await newOrder(orderData);
-      toast.success('Payment successful!!!');
       // cartItems.map(
       //   async (item) =>
       //     await updateProduct({
