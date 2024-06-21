@@ -14,7 +14,7 @@ import { resetCart } from "../redux/reducer/cartReducer";
 import { Rootstate } from "../redux/store";
 import { NewOrderRequest } from "../types/apiTypes";
 import { responseToast } from "../utils/features";
-import { useUpdateProductMutation } from "../redux/api/productAPI";
+// import { useUpdateProductMutation } from "../redux/api/productAPI";
 
 const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_KEY);
 
@@ -38,7 +38,7 @@ const CheckoutForm = () => {
   const [isProcessing, setIsProcessing] = useState<boolean>(false);
 
   const [newOrder] = useNewOrderMutation();
-  const [updateProduct] = useUpdateProductMutation();
+  // const [updateProduct] = useUpdateProductMutation();
 
   const submitHandler = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -75,14 +75,14 @@ const CheckoutForm = () => {
     if (paymentIntent.status === "succeeded") {
       const res = await newOrder(orderData);
       toast.success('Payment successful!!!');
-      cartItems.map(
-        async (item) =>
-          await updateProduct({
-            userId: user?._id!,
-            productId: item.productId,
-            stock: item.stock - item.quantity,
-          })
-      );
+      // cartItems.map(
+      //   async (item) =>
+      //     await updateProduct({
+      //       userId: user?._id!,
+      //       productId: item.productId,
+      //       stock: item.stock - item.quantity,
+      //     })
+      // );
       dispatch(resetCart());
       responseToast(res, navigate, "/orders");
     }

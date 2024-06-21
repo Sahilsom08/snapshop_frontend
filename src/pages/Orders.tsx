@@ -86,7 +86,8 @@ const Orders = () => {
     column,
     rows,
     "dashboard-product-box",
-    "Orders"
+    "Orders",
+    rows.length > 6
   )();
 
   return (
