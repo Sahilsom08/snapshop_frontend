@@ -51,7 +51,6 @@ const Shipping = () => {
         state: data.clientSecret,
       });
     } catch (error) {
-      console.log(error);
       toast.error("Something went wrong");
     }
   };
@@ -111,6 +110,7 @@ const Shipping = () => {
           value={shippingInfo.pinCode}
           onChange={changeHandler}
           required
+          maxLength={6}
         />
 
         <button type="submit">Pay Now</button>
